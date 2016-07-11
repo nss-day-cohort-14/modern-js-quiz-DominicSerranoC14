@@ -1,26 +1,20 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-const math = require('./math');
+const userInterface = require('./ui');
 const $ = require('jquery');
 
-console.log("math", math);
-console.log("add", math.add);
-console.log("sum", math.add(5, 10));
-console.log("$", $('<button/>'));
-
-},{"./math":2,"jquery":3}],2:[function(require,module,exports){
+},{"./ui":2,"jquery":3}],2:[function(require,module,exports){
 'use strict';
 
-function bar () {
+// A base Robot function.-----
+// Define three robot type functions (e.g. Drone, Bipedal, ATV).
+// Define at least 2 specific robot model functions for each type.
+// Give each robot model a different range of health. For example, one model can have health range of 50-80, and another one will have a range of 60-120. To accomplish this, read about the Math.random() function in JavaScript.
+// Give each robot model a different range of damage they do using the same technique.
 
-}
+module.exports = {};
 
-function add (x, y) {
-	return x + y;
-}
-
-module.exports = { add, bar };
 },{}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.0.0

@@ -36,7 +36,7 @@ let customOpts = {
   debug: true
 };
 let opts = Object.assign({}, watchify.args, customOpts);
-let bundler = watchify(browserify(opts)); 
+let bundler = watchify(browserify(opts));
 bundler.on('update', bundle); // on any dep update, runs the bundler
 bundler.on('log', gutil.log); // output build logs to terminal
 
