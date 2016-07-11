@@ -1,10 +1,8 @@
 'use strict';
 
-let robotName = "Robot";
-
 function Robot() {
-  this.health = null;
-  this.attack = null;
+  this.health = 50;
+  this.attack = 10;
   this.name = null;
 }
 
