@@ -16,6 +16,7 @@ function Atv() {
   this.type = 'Atv';
 }
 
+//Chain types to robot
 Drone.prototype = new Robot();
 Bipedal.prototype = new Robot();
 Atv.prototype = new Robot();

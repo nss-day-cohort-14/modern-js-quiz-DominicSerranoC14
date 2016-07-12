@@ -3,7 +3,7 @@
 // //Testing suite for main logic of robot quiz
 //
 // //Browserify requirements
-// let Robot = require('../robot');
+// const Robot = require('../robot');
 //
 // //////////////////////////////////////
 // ///////Begin defining functions///////
@@ -17,13 +17,13 @@
 // 	//Checks and makes sure that each Robot has a health property
 // 	it('Rob should have a heatlh property', function () {
 // 		let Rob = new Robot();
-// 		expect(Rob.health).toBe(50);
+// 		expect(Rob.health).toEqual(50);
 // 	});
 //
 // 	//Checks and makes sure that each Robot has an attack property
 // 	it('Rob should have an attack property', function () {
 // 		let Rob = new Robot();
-// 		expect(Rob.attack).toBe(10);
+// 		expect(Rob.attack).toEqual(10);
 // 	});
 //
 // 	//Checks and makes sure that each Robot has a name property
