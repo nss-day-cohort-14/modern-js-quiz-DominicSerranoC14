@@ -6,7 +6,8 @@ const Advantage = require('../js/statGen.js');
 
 
 //Define model functions for Drones with attack advantages
-let atvAttack = function() {
+let atvAttack = function(name) {
+  this.name = name;
   this.model = 'Attack ATV';
   this.attack = this.attack + Advantage.skillAdvantage();
   this.health = this.health +
@@ -14,7 +15,8 @@ let atvAttack = function() {
   this.weapon = 'Turret';
 };
 
-let atvDefense = function() {
+let atvDefense = function(name) {
+  this.name = name;
   this.model = 'Defense ATV';
   this.attack = this.attack + Advantage.defaultAdvantage();
   this.health = this.health + Advantage.skillAdvantage();

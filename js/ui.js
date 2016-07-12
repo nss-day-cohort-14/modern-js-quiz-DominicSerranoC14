@@ -6,15 +6,13 @@
 
 // Browserify
 const $ = require('jquery');
+const Drone = require('./droneModel');
+const Bipedal = require('./bipedalModel');
+const ATV = require('./atvModel.js');
 
-//Variables and references
-const playerOneDiv = $('#pOneID');
-const playerTwoDiv = $('#pTwoID');
 
-const playerOneSelect = $('#pOneSelect');
-const playerTwoSelect = $('#pTwoSelect');
-
-const attackButton = $('#attack-button');
+let store = {};
+let newP;
 
 
 ////////Begin base functions for UI interaction
@@ -25,43 +23,44 @@ let stringValidation = function(playerId, playerSelect) {
   let message =`Please enter ${playerId.attr('name')}'s info to play.`;
   //tests if either player left text input or select menu blank
   if ( playerId.val() === "" || playerSelect.val() === "" ) {
-    console.log(message);
+    window.alert(message);
   } else {
     //if all players info has been entered, run this function
-    setPlayerInfo(playerId, playerSelect);
+    setPlayerObj(playerId, playerSelect);
     }
 
 };//end stringValidation function
 
 
 //function that grabs player one's info
-let setPlayerInfo = function( playerId, playerSelect ) {
+let setPlayerObj = function( playerID, playerSelect ) {
 
-    let store = {};
-    let pID = playerId.val();
-    let pSelect = playerSelect.val();
-    store = { pID, pSelect };
-    getPlayerInfo(store);
+  //Store each model obj in an array
+  let Types = [ Drone, Bipedal, ATV ];
+
+    //loop through each obj in array
+    $(Types).each(function(each) {
+      //store current obj here
+      let pObj = Types[each];
+      // console.log(pObj);
+      //loop  through each key in current obj
+      for ( let key in pObj) {
+        //if player select option equal obj key, use the current object and instantiate a new player obj
+        if ( playerSelect.val() === key ) {
+          newP = new pObj[key](playerID.val());
+          store = { newP };
+        }//end conditional
+      }//end for in loop
+    });//end .each method
 
 };//end getPlayerInfo function
 
 
-let getPlayerInfo = function(store) {
+let getPlayerObj = function() {
 
-  console.log(store);
   return store;
 
 };//end getPlayerInfo function
 
 
-//Event listener for attack function
-attackButton.click( function() {
-  //Collect player one info
-  console.log(stringValidation( playerOneDiv, playerOneSelect));
-
-  //Collect player two info
-  console.log(stringValidation( playerTwoDiv, playerTwoSelect));
-});//end attack button event listener
-
-
-module.exports = getPlayerInfo;
+module.exports = { stringValidation, getPlayerObj };

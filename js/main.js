@@ -9,22 +9,38 @@ const Bipedal = require('./bipedalModel');
 const ATV = require('./atvModel.js');
 const $ = require('jquery');
 const PlayerInfo = require('./ui.js');
+const FightPlayer = require('./fight.js');
 
 
-//Test for instantiation of drones
-// let arroney = new Drone.droneAttack();
-// let droney = new Drone.droneDefense();
-// console.log(arroney);
-// console.log(droney);
+//Variables and references
+const playerOneDiv = $('#pOneID');
+const playerTwoDiv = $('#pTwoID');
 
-//Test for instantiation of bipedals
-// let bipedalAtt = new Bipedal.bipedalAttack();
-// let bipedalDef = new Bipedal.bipedalDefense();
-// console.log(bipedalAtt);
-// console.log(bipedalDef);
+const playerOneSelect = $('#pOneSelect');
+const playerTwoSelect = $('#pTwoSelect');
 
-//Test for instantiation of atvs
-// let atvAtt = new ATV.atvAttack();
-// let atvDef = new ATV.atvDefense();
-// console.log(atvAtt);
-// console.log(atvDef);
+const attackButton = $('#attack-button');
+
+
+//event listener for attack button
+attackButton.click(function() {
+
+  //grabs player one info
+  PlayerInfo.stringValidation(playerOneDiv, playerOneSelect);
+
+  let pOne = PlayerInfo.getPlayerObj();
+
+  //grabs player two info
+  PlayerInfo.stringValidation(playerTwoDiv, playerTwoSelect);
+
+  let pTwo = PlayerInfo.getPlayerObj();
+
+  //check if player objects are defined
+  //use loop to determine
+
+  //Execute fight logic
+  // console.log(pOne, pTwo);
+  FightPlayer(pOne, pTwo);
+  FightPlayer(pTwo);
+
+});//end event listener
