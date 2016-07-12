@@ -8,6 +8,53 @@
 </head>
 <body>
 
+	<fieldset>
+		<legend>Robot Battle Dome</legend>
+
+		<div>
+			<input type="text" name="Player One" id="pOneID" placeholder="Enter Player 1 Name"><p></p>
+			<select id="pOneSelect">
+				<option selected value="">Select Model</option>
+				<optgroup label="Drones">
+					<option value="droneAttack">Attack Drone</option>
+					<option value="droneDefense">Defense Drone</option>
+				</optgroup>
+				<optgroup label="Bipedals">
+					<option value="bipedalAttack">Attack Bipedal</option>
+					<option value="bipedalDefense">Defense Bipedal</option>
+				</optgroup>
+				<optgroup label="ATV's">
+					<option value="atvAttack">Attack ATV</option>
+					<option value="atvDefense">Defense ATV</option>
+				</optgroup>
+			</select>
+		</div>
+
+		<div>
+			<input type="text" name="Player Two" id="pTwoID" placeholder="Enter Player 2 Name"><p></p>
+			<select id="pTwoSelect">
+				<option selected value="">Select Model</option>
+				<optgroup label="Drones">
+					<option value="droneAttack">Attack Drone</option>
+					<option value="droneDefense">Defense Drone</option>
+				</optgroup>
+				<optgroup label="Bipedals">
+					<option value="bipedalAttack">Attack Bipedal</option>
+					<option value="bipedalDefense">Defense Bipedal</option>
+				</optgroup>
+				<optgroup label="ATV's">
+					<option value="atvAttack">Attack ATV</option>
+					<option value="atvDefense">Defense ATV</option>
+				</optgroup>
+			</select>
+		</div>
+
+		<div id="button-div">
+			<button id="attack-button">Attack!</button>
+		</div>
+
+	</fieldset>
+
 	<script src="dist/bundle.js"></script>
 </body>
 </html>

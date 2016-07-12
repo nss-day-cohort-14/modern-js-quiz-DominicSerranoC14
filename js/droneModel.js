@@ -6,20 +6,22 @@ const Advantage = require('../js/statGen.js');
 
 
 //Define model functions for Drones with attack advantages
-function droneAttack() {
+let droneAttack = function() {
   this.model = 'Attack Drone';
   this.attack = this.attack + Advantage.skillAdvantage();
   this.health = this.health +
   Advantage.defaultAdvantage();
-}
+  this.weapon = 'Laser';
+};
 
-function droneDefense() {
+let droneDefense = function() {
   this.model = 'Defense Drone';
   this.attack = this.attack + Advantage.defaultAdvantage();
   this.health = this.health + Advantage.skillAdvantage();
-}
+  this.weapon = 'Laser';
+};
 
 droneAttack.prototype = new Type.Drone();
 droneDefense.prototype = new Type.Drone();
 
-module.exports = { droneAttack, droneDefense};
+module.exports = { droneAttack, droneDefense };
