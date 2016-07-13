@@ -2,11 +2,6 @@
 
 //Browserify requirements
 const userInterface = require('./ui');
-const Robot = require('./robot');
-const Type = require('./type');
-const Drone = require('./droneModel');
-const Bipedal = require('./bipedalModel');
-const ATV = require('./atvModel.js');
 const $ = require('jquery');
 const PlayerInfo = require('./ui.js');
 const FightPlayer = require('./fight.js');
@@ -39,8 +34,6 @@ attackButton.click(function() {
   //use loop to determine
 
   //Execute fight logic
-  // console.log(pOne, pTwo);
-  FightPlayer(pOne, pTwo);
-  FightPlayer(pTwo);
+  FightPlayer.determinePlayer(pOne, pTwo);
 
 });//end event listener

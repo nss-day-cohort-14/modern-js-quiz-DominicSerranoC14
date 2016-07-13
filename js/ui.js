@@ -1,8 +1,5 @@
 'use strict';
 
-//Provide a Attack! button that, when clicked, simply applies the damage output of each robot against the other one.
-//Once either robot's health is <0 display a message that the battle is over, and which one won. For example...
-//The Viper Drone defeated the Behemoth ATV with its flamethrower.
 
 // Browserify
 const $ = require('jquery');
@@ -12,7 +9,6 @@ const ATV = require('./atvModel.js');
 
 
 let store = {};
-let newP;
 
 
 ////////Begin base functions for UI interaction
@@ -42,13 +38,12 @@ let setPlayerObj = function( playerID, playerSelect ) {
     $(Types).each(function(each) {
       //store current obj here
       let pObj = Types[each];
-      // console.log(pObj);
       //loop  through each key in current obj
       for ( let key in pObj) {
         //if player select option equal obj key, use the current object and instantiate a new player obj
         if ( playerSelect.val() === key ) {
-          newP = new pObj[key](playerID.val());
-          store = { newP };
+          let player = new pObj[key](playerID.val());
+          store = { player };
         }//end conditional
       }//end for in loop
     });//end .each method
