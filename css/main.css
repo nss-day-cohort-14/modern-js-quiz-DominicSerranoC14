@@ -9,14 +9,20 @@ body {
 }
 
 div {
-  width: 30%;
+  width: 35%;
   display: inline-block;
-  margin: 2rem 5rem;
+  margin: 5rem 0;
+  margin-left: 6rem;
 }
 
 fieldset {
-  width: 80%;
-  margin: auto;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+button {
+  margin: 2rem auto;
+  display: block;
 }
 
 
@@ -24,9 +30,9 @@ fieldset {
 Class Styling
 ****************************/
 
-#button-div button {
+/*#button-div button {
   margin: 0 17rem;
-}
+}*/
 
 #output-div {
   text-align: center;

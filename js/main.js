@@ -18,7 +18,7 @@ const attackButton = $('#attack-button');
 
 
 //event listener for attack button
-attackButton.click(function() {
+attackButton.click(() => {
 
   //grabs player one info
   PlayerInfo.stringValidation(playerOneDiv, playerOneSelect);
