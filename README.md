@@ -3,50 +3,35 @@
 
 ## Setup
 
-1. `cd` to your quizzes directory.
-1. Clone this repository and `cd` into the directory it creates.
-1. Now run the following commands.
+1. To install run the following commands.
 
     ```bash
-    git checkout -b quiz
-    touch index.html
-    touch quiz.js
-    touch quiz.css
+    npm install --save
     ```
 
-You are now ready to work in the `quiz` branch.
+##About this project
 
-When your work in complete, push up the branch (`git push origin quiz`) and submit the pull request on Github.
+This project was designed to utilize the most current developer technologies, and the latest features released in the ES6 2016 release, such as:
 
-## Instructions
+1. Use of **let** and **const**
+1. Fat arrow functions
+1. String literals
+1. Object shorthand
+1. Prototypal inheritance using **new** keyword
 
-### Code/Tools Requirements
 
-1. Use ES6 language features wherever you can. At a minimum, you should be using **let**, **const**, fat arrows, property shorthand, method properties, and string templates.
-1. Have a Gulp task running at all times to validate your JavaScript. We will be validating your project and we should see 0 errors.
-1. You must have a test suite that validates the core logic of the application.
-1. You must use jQuery for interacting with the DOM.
+Some of the technologies I used in this project are:
 
-### Base Logical Requirements
+1. jQuery v3
+1. Jasmine testing framework
+1. Browserify
 
-You'll be building robots to battle each other.
+The function of this project is to create a simple game where the user chooses two robot characters from **3** possible types, and **6** possible models or robots.
 
-1. A base Robot function.
-1. Define three robot type functions (e.g. Drone, Bipedal, ATV).
-1. Define at least 2 specific robot model functions for each type.
-1. Give each robot model a different range of health. For example, one model can have health range of 50-80, and another one will have a range of 60-120. To accomplish this, read about the [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) function in JavaScript.
-1. Give each robot model a different range of damage they do using the same technique.
+Each character takes on a name that the user can pass to it, and has a predefined weapon and other properties. The attack and defense of each robot model has a randomly generated health and attack. Each model of robot also has either an offensive or defensive advantage, based on the model selected.
 
-### Base Functional Requirements
+Once the player has entered valid information for both characters to be generated, the attack button is pressed, and the robots attack each other on a turn-by-turn basis until one of their health amounts are less than zero. Once this happens, the winner is declared and the game ends.
 
-1. When your user interface first loads, provide 2 text inputs to name the two robots that will do battle.
-1. You must also provide a select element underneath each text input so that the user can select one of the 6 robot models you defined.
-1. Provide a Attack! button that, when clicked, simply applies the damage output of each robot against the other one.
-1. Once either robot's health is <0 display a message that the battle is over, and which one won. For example...
-
-##### The Viper Drone defeated the Behemoth ATV with its flamethrower.
-
----
 
 ## Bonus Goals
 
@@ -56,7 +41,7 @@ These are **completely** optional, once you have the basic requirements met and 
 
 1. Define at least six different modifications and six different weapons that can be added to a robot.
 1. Each modification should provide some combination of the following benefits - increased protection, increased damage, or evasion capability (ability to avoid some attacks).
-1. Define the range of damage that each weapon can do. 
+1. Define the range of damage that each weapon can do.
 
 
 ### Bonus Functional Requirements
@@ -76,20 +61,3 @@ If you have completed the base requirements, and want to explore object composit
 1. When the battle is over display the outcome to the user. For example...
 
 ##### The Viper Drone defeated the Behemoth ATV with its flamethrower.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
